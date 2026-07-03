@@ -1,0 +1,16 @@
+.authContainer {
+  width: 300px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.authContainer input {
+  padding: 10px;
+}
+
+.authContainer button {
+  padding: 10px;
+  cursor: pointer;
+}

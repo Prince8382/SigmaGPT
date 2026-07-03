@@ -1,0 +1,177 @@
+.chats {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+}
+
+.chats:hover {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.chats::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.chats:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chats::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.userMessage {
+    background-color: #2f2f2f;
+    color: #ececec;
+    padding: 10px 16px;
+    border-radius: 20px;
+    max-width: 70%;
+    text-align: left;
+    display: inline-block;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+.gptDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    color: #d1d5db;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 10px 0;
+}
+
+.gptDiv ul, .gptDiv ol {
+    padding-left: 24px;
+    margin: 8px 0;
+}
+
+.gptDiv li {
+    margin-bottom: 6px;
+}
+
+.gptDiv p {
+    margin: 0 0 12px 0;
+    white-space: pre-wrap;
+}
+
+.gptDiv h1, .gptDiv h2, .gptDiv h3, .gptDiv h4 {
+    color: #fff;
+    margin: 16px 0 8px 0;
+    font-weight: 600;
+}
+
+.gptDiv pre {
+    background-color: #0d1117 !important;
+    border-radius: 8px;
+    width: 100%;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.gptDiv code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.88rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.gptDiv table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 0.9rem;
+}
+
+.gptDiv th, .gptDiv td {
+    border: 1px solid #424242;
+    padding: 10px 12px;
+}
+
+
+@media (max-width: 1024px) {
+    .chats {
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .userMessage {
+        max-width: 80%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .chats {
+        max-width: 100%;
+        padding: 12px;
+        gap: 14px;
+    }
+
+    .userMessage {
+        max-width: 85%;
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+
+    .gptDiv {
+        font-size: 0.95rem;
+        padding: 8px 0;
+    }
+
+    .gptDiv pre {
+        font-size: 0.85rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .chats {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .userMessage {
+        max-width: 90%;
+        font-size: 0.88rem;
+    }
+
+    .gptDiv {
+        font-size: 0.9rem;
+    }
+}

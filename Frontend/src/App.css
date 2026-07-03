@@ -1,0 +1,202 @@
+* {
+    color: #ececec;
+    font-family: Roboto, 'Open Sans', 'Helvetica neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+.app{
+    background-color: #212121;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.dropDown {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 100;
+}
+
+.dropDownItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropDownItem:hover {
+  background: #333;
+}
+
+
+.authPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authCard {
+  width: 320px;
+  padding: 25px;
+  background: #151515;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+input {
+  padding: 10px;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+
+.primaryBtn {
+  padding: 10px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secondaryBtn {
+  padding: 10px;
+  background: transparent;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.pageCenter {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 400px;
+  padding: 25px;
+  background: #151515;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+}
+
+.highlightCard {
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+
+.subText {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.switchText {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.switchText span {
+  color: white;
+  cursor: pointer;
+}
+
+
+.profileBox {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 5px;
+}
+
+.small {
+  font-size: 12px;
+  color: #aaa;
+}
+
+
+@media (max-width: 1024px) {
+  .card {
+    width: 320px;
+  }
+
+  .authCard {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .app {
+    flex-direction: column;
+  }
+
+  .authCard {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .pageCenter {
+    padding: 10px;
+  }
+
+  .dropDown {
+    right: 5%;
+    width: 90%;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .authCard {
+    width: 95%;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .dropDownItem {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
