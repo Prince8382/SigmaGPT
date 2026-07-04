@@ -136,18 +136,21 @@ function Sidebar() {
             <ul className='history'>
                 {
                     allThreads?.map((thread, idx) => (
-                        <li key={idx}
-                            onClick={() => changeThread(thread.threadId)}
-                            className={thread.threadId === currThreadId ? 'highlighted': " "}
+                        <li
+                          key={idx}
+                          onClick={() => changeThread(thread.threadId)}
+                          className={thread.threadId === currThreadId ? "highlighted" : ""}
                         >
-                            {thread.title}
-                            <i className="fa-solid fa-trash"
-                                onClick={(e) => {
-                                    e.stopPropagation();//Stop event bubbling
-                                    deleteThread(thread.threadId);
-                                }}
-                            ></i>
-                        </li>
+                          <span className="threadTitle">{thread.title}</span>
+
+                         <i
+                          className="fa-solid fa-trash"
+                          onClick={(e) => {
+                             e.stopPropagation();
+                             deleteThread(thread.threadId);
+                            }}
+                        ></i>
+                   </li>
                     ))
                 }
             </ul>

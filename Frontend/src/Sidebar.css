@@ -68,7 +68,9 @@ button:hover {
 .fa-trash {
     opacity: 0;
     position: absolute;
-    right: 0;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .history li:hover .fa-trash {
@@ -86,64 +88,6 @@ button:hover {
 }
 
 
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 260px;
-    }
-
-    .history li {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    button {
-        flex-shrink: 0;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .logo {
-        height: 22px;
-        width: 22px;
-    }
-
-    .history {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        margin: 0;
-        padding: 8px;
-    }
-
-    .history li {
-        white-space: nowrap;
-        font-size: 12px;
-        margin-bottom: 0;
-    }
-
-    .sign {
-        display: none; 
-    }
-
-    .fa-trash {
-        position: static;
-        margin-left: 6px;
-        opacity: 1;
-    }
-}
 
 @media (max-width: 480px) {
 
@@ -158,7 +102,7 @@ button:hover {
 }
 
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .sidebar {
         width: 260px;
     }
@@ -166,71 +110,9 @@ button:hover {
     .history li {
         font-size: 13px;
     }
-}
+} */
 
-@media (max-width: 768px) {
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        scrollbar-width: none; 
-    }
-
-    .sidebar::-webkit-scrollbar {
-        display: none; 
-    }
-
-    button {
-        flex-shrink: 0;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .logo {
-        height: 22px;
-        width: 22px;
-    }
-
-    .history {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        margin: 0;
-        padding: 8px;
-
-        scrollbar-width: none;
-    }
-
-    .history::-webkit-scrollbar {
-        display: none;
-    }
-
-    .history li {
-        white-space: nowrap;
-        font-size: 12px;
-        margin-bottom: 0;
-    }
-
-    .sign {
-        display: none;
-    }
-
-    .fa-trash {
-        position: static;
-        margin-left: 6px;
-        opacity: 1;
-    }
-}
-
-
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
     .history li {
         font-size: 11px;
@@ -240,6 +122,12 @@ button:hover {
     button {
         padding: 6px;
     }
+} */
+
+.threadTitle{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 /* .sidebar {
   width: 260px;
@@ -270,9 +158,6 @@ button:hover {
   z-index: 10;
 }
 
-.sidebar {
-  transition: transform 0.3s ease;
-}
 
 @media (max-width: 768px) {
 
@@ -344,7 +229,7 @@ button:hover {
     word-break: break-word;
 }
 
-
+/* 
 .history li p,
 .history li span {
     margin: 0;
@@ -354,6 +239,11 @@ button:hover {
     overflow-wrap: anywhere;  
 
     line-height: 1.4;
+} */
+ .threadTitle{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 
