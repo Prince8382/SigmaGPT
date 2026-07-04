@@ -73,9 +73,16 @@ button:hover {
     transform: translateY(-50%);
 }
 
-.history li:hover .fa-trash {
-    opacity: 1;
-    color: #fff;
+.history li .fa-trash{
+    opacity: 1;              
+    justify-self: end;
+    align-self: center;
+
+    font-size: 15px;
+    color: #bdbdbd;
+    cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 .fa-trash:hover {
@@ -125,9 +132,12 @@ button:hover {
 } */
 
 .threadTitle{
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    display: block;
+    width: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 /* .sidebar {
   width: 260px;
