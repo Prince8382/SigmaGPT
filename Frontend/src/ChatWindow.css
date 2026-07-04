@@ -269,3 +269,15 @@ input:focus {
     position: relative;
   }
 }
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}

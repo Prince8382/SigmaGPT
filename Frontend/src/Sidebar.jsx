@@ -6,7 +6,7 @@ import {v1 as uuidv1} from "uuid";
 import './App.css'
 
 function Sidebar() {
-    const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats, SidebarOpen, setSidebarOpen} = useContext(MyContext);
+    const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats, sidebarOpen, setSidebarOpen} = useContext(MyContext);
 
     const getAllThreads = async () => {
     try {
@@ -118,7 +118,7 @@ function Sidebar() {
 
     return ( 
 <>
-    {sidebarOpen && (
+    {Boolean(sidebarOpen) && (
         <div
             className="overlay"
             onClick={() => setSidebarOpen(false)}
