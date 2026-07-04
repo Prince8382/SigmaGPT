@@ -315,21 +315,33 @@ button:hover {
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 10px;
+    padding: 0 35px 0 10px;  
     border-radius: 10px;
 
     white-space: nowrap;
     overflow: hidden;
+
+    position: relative; 
   }
 
- 
+  
   .history li {
     text-overflow: ellipsis;
   }
 
   
   .history li i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
     flex-shrink: 0;
-    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .history li i:hover {
+    color: #f87171;
   }
 }
