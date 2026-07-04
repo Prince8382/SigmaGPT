@@ -190,13 +190,23 @@ function ChatWindow() {
 
             <div className="chatInput">
                 <div className="inputBox">
-                    <input
-                        placeholder="Message SigmaGPT..."
-                        value={prompt}
-                        onChange={(e) => setPrompt(e.target.value)}
-                        onKeyDown={(e) =>
-                            e.key === "Enter" ? getReply() : ""
-                        }
+                    <textarea
+                       className="chatTextarea"
+                       placeholder="Message SigmaGPT..."
+                       value={prompt}
+                       rows={1}
+                       onChange={(e) => {
+                          setPrompt(e.target.value);
+
+                          e.target.style.height = "auto";
+                          e.target.style.height = e.target.scrollHeight + "px";
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" && !e.shiftKey) {
+                                e.preventDefault(); // new line stop
+                                getReply();
+                            }
+                        }}
                     />
 
                     <div id="submit" onClick={getReply}>
