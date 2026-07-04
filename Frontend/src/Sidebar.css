@@ -274,50 +274,45 @@ button:hover {
   transition: transform 0.3s ease;
 }
 
-/* mobile hidden by default */
 @media (max-width: 768px) {
 
     .sidebar {
         position: fixed;
-        left: -280px;
         top: 0;
+        left: -280px;
         width: 280px;
         height: 100vh;
 
         display: flex;
         flex-direction: column;
 
-        overflow: hidden;   
-
         background: #171717;
-        transition: 0.3s;
+        transition: 0.3s ease;
         z-index: 1000;
+
+        overflow: hidden;
     }
 
     .sidebar.open {
         left: 0;
     }
 
-    /* TOP BUTTON */
     .sidebar button {
         flex-shrink: 0;
+        padding: 10px;
     }
 
-    /* HISTORY BOX (MAIN FIX) */
+    
     .history {
-        flex: 1 1 auto;    
-        min-height: 0;      
-        overflow-y: auto;   
-        overflow-x: hidden;
+        flex: 1;
+        min-height: 0;       
+        overflow-y: auto;    
 
         display: flex;
         flex-direction: column;
 
         padding: 10px;
         box-sizing: border-box;
-
-        border-top: 1px solid rgba(255,255,255,0.1);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .history li {
@@ -327,8 +322,9 @@ button:hover {
         font-size: 14px;
     }
 
-    /* FOOTER */
+    /* BOTTOM AREA */
     .sign {
         flex-shrink: 0;
+        padding: 10px;
     }
 }
