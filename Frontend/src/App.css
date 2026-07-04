@@ -254,22 +254,39 @@ input {
         cursor:pointer;
     }
 
-    /* Sidebar hidden by default */
+   @media (max-width:768px){
+
     .sidebar{
-        position:fixed;
-        top:0;
-        left:-280px;
-        width:260px;
-        height:100vh;
-        background:#202123;
-        z-index:999;
-        transition:0.3s ease-in-out;
-        display:flex;
-        flex-direction:column;
+        position: fixed;
+        left: -280px;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background:#171717;
+        flex-direction: column;
+        transition:.3s;
+        z-index:1000;
     }
 
-    /* Sidebar open state */
     .sidebar.open{
         left:0;
     }
+
+    .history{
+        display:block;
+        overflow-y:auto;
+        overflow-x:hidden;
+        padding:10px;
+    }
+
+    .history li{
+        display:block;
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .sign{
+        display:block;
+    }
+   }
 }

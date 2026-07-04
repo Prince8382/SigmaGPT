@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { MyContext } from  "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
 import './App.css'
+import logo from "./assets/blacklogo.png";
 
 function Sidebar() {
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats, sidebarOpen, setSidebarOpen} = useContext(MyContext);
@@ -128,7 +129,7 @@ function Sidebar() {
     <section className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         
             <button onClick={createNewChat}>
-                <img src='src/assets/blacklogo.png' alt='gpt logo' className='logo'></img>
+                <img src={logo} alt="SigmaGPT" className="logo"/>
                 <span><i className="fa-solid fa-pen-to-square"></i></span>
             </button>    
 

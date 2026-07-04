@@ -275,17 +275,38 @@ button:hover {
 }
 
 /* mobile hidden by default */
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    transform: translateX(-100%);
-    z-index: 20;
-  }
+@media (max-width:768px){
 
-  .sidebar.open {
-    transform: translateX(0);
-  }
+    .sidebar{
+        position: fixed;
+        left: -280px;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background:#171717;
+        flex-direction: column;
+        transition:.3s;
+        z-index:1000;
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .history{
+        display:block;
+        overflow-y:auto;
+        overflow-x:hidden;
+        padding:10px;
+    }
+
+    .history li{
+        display:block;
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .sign{
+        display:block;
+    }
 }
