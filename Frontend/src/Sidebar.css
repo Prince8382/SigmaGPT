@@ -323,14 +323,15 @@ button:hover {
     box-sizing: border-box;
   }
 
-  /* EACH HISTORY ITEM */
-  .history li {
+
+.history li {
     width: 100%;
     min-height: 48px;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 24px;
     align-items: center;
+    column-gap: 12px;
 
     padding: 12px 15px;
 
@@ -339,40 +340,39 @@ button:hover {
 
     box-sizing: border-box;
 
-    white-space: nowrap;
     overflow: hidden;
-  }
+    word-break: break-word;
+}
 
-  /* TEXT */
-  .history li p,
-  .history li span {
-    flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+
+.history li p,
+.history li span {
     margin: 0;
-  }
 
-  /* DELETE ICON */
-  .history li .fa-trash {
-    flex-shrink: 0;
-    margin-left: 12px;
+    white-space: normal;      
+    word-break: break-word;   
+    overflow-wrap: anywhere;  
 
-    color: #bdbdbd;
+    line-height: 1.4;
+}
+
+
+.history li .fa-trash {
+    justify-self: end;   
+    align-self: center;
+
     font-size: 15px;
+    color: #bdbdbd;
     cursor: pointer;
-    transition: 0.2s;
-  }
 
-  .history li:hover .fa-trash {
-    color: #fff;
-  }
+    flex-shrink: 0;
+}
 
-  .history li .fa-trash:hover {
-    color: #f87171;
-  }
+.history li:hover .fa-trash{
+    color:#fff;
+}
 
-  .history::-webkit-scrollbar {
-    display: none;
-  }
+.history li .fa-trash:hover{
+    color:#f87171;
+}
 }
