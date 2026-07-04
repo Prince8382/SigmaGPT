@@ -8,16 +8,30 @@ function Sidebar() {
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
 
     const getAllThreads = async () => {
-        try {
-            const response = await fetch("http://localhost:8080/api/thread");
-            const res = await response.json();
-            const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title}));
-         //   console.log(filteredData);
-            setAllThreads(filteredData);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    try {
+        const token = localStorage.getItem("token");
+
+        const response = await fetch("http://localhost:8080/api/thread", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+
+        const res = await response.json();
+
+        //console.log("Thread Response:", response.status, res);
+
+        const filteredData = res.map(thread => ({
+            threadId: thread.threadId,
+            title: thread.title,
+        }));
+
+        setAllThreads(filteredData);
+
+    } catch (err) {
+        console.log(err);
+    }
+};
 
     useEffect(() => {
         getAllThreads();
@@ -53,9 +67,19 @@ function Sidebar() {
 
     const deleteThread = async (threadId) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/thread/${threadId}`, {method: "DELETE"});
+            const token = localStorage.getItem("token");
+
+const response = await fetch(
+  `http://localhost:8080/api/thread/${threadId}`,
+  {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
             const res = await response.json();
-            console.log(res);
+          //  console.log(res);
 
             //update thread re-render
             setAllThreads(prev => prev.filter(thread => thread.threadId !== threadId));

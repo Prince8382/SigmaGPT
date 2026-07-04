@@ -23,9 +23,11 @@ router.post("/test", async (req, res) => {
 //Get all Thread
 router.get("/thread", auth, async (req, res) => {
   try {
+    // console.log("Logged User:", req.user.id);
     const threads = await Thread.find({
       userId: req.user.id,
     }).sort({ updatedAt: -1 });
+    // console.log("Threads Found:", threads);
     //descending order of updatedAt... most recent data on top
     res.json(threads);
   } catch (err) {
@@ -106,6 +108,7 @@ router.post("/chat", auth, async (req, res) => {
     thread.updatedAt = new Date();
 
     await thread.save();
+    // console.log("Thread Saved:", thread);
     res.json({ reply: assistantReply });
   } catch (err) {
     console.log(err);

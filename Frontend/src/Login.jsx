@@ -24,6 +24,12 @@ function Login() {
     }
   };
 
+   const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   useEffect(() => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -35,12 +41,19 @@ function Login() {
     <div className="authContainer">
       <h2>Login</h2>
 
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-      <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
+      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={handleKeyDown}
+       />
+
+      <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} 
+        onKeyDown={handleKeyDown}
+      />
 
       <button onClick={handleLogin}>Login</button>
 
-      <p onClick={() => navigate("/register")}>
+      <p onClick={() => navigate("/register")}
+        style={{ cursor: "pointer" }}
+      >
         Create new account
       </p>
     </div>

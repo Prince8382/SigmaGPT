@@ -200,3 +200,12 @@ input {
     font-size: 14px;
   }
 }
+
+.app {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+.authContainer p {
+    cursor: pointer;
+}

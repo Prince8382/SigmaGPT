@@ -26,13 +26,14 @@ function ChatWindow() {
         setLoding(true);
         setNewChat(false);
 
-        console.log("message", prompt, "threadId", currThreadId);
+      //  console.log("message", prompt, "threadId", currThreadId);
 
         const options = {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                Authorization: localStorage.getItem("token")
+                    "Content-Type": "application/json",
+                     Authorization: `Bearer ${localStorage.getItem("token")}`
+
             },
             body: JSON.stringify({
                 message: prompt,
