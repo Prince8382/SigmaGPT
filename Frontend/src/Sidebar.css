@@ -275,56 +275,32 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  .history {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding: 10px;
+  }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -280px;
-        width: 280px;
-        height: 100vh;
+  .history li {
+    width: 100%;
+    height: 45px;              
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        display: flex;
-        flex-direction: column;
+    padding: 0 10px;
+    border-radius: 10px;
 
-        background: #171717;
-        transition: 0.3s ease;
-        z-index: 1000;
+    white-space: nowrap;
+    overflow: hidden;        
+  }
 
-        overflow: hidden;
-    }
-
-    .sidebar.open {
-        left: 0;
-    }
-
-    .sidebar button {
-        flex-shrink: 0;
-        padding: 10px;
-    }
-
-    
-    .history {
-        flex: 1;
-        min-height: 0;       
-        overflow-y: auto;    
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .history li {
-        flex-shrink: 0;
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    /* BOTTOM AREA */
-    .sign {
-        flex-shrink: 0;
-        padding: 10px;
-    }
+  .history li span,
+  .history li {
+    text-overflow: ellipsis;  
+  }
 }
