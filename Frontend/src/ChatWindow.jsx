@@ -125,7 +125,7 @@ function ChatWindow() {
         <div className="chatWindow">
             <div className="navbar">
                 <div
-                 className="menuBtn"
+                 className="hamburger"
                    onClick={() => setSidebarOpen(true)}
                  >
                     <i className="fa-solid fa-bars"></i>

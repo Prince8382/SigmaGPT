@@ -252,3 +252,20 @@ input:focus {
         justify-content:space-between;
     }
 }
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .app {
+    position: relative;
+  }
+}

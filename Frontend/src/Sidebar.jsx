@@ -122,7 +122,7 @@ function Sidebar() {
         <div
             className="overlay"
             onClick={() => setSidebarOpen(false)}
-        ></div>
+        />
     )}
 
     <section className={`sidebar ${sidebarOpen ? "open" : ""}`}>
