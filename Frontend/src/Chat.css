@@ -175,8 +175,8 @@
         font-size: 0.9rem;
     }
 }
-.chatMessages {
+/* .chatMessages {
   flex: 1;
   overflow-y: auto;
   padding: 10px;
-}
+} */
