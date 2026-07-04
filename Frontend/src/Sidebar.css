@@ -283,11 +283,13 @@ button:hover {
         top: 0;
         width: 280px;
         height: 100vh;
-        background: #171717;
+
         display: flex;
         flex-direction: column;
-        overflow: hidden;
-        justify-content: flex-start;
+
+        overflow: hidden;   
+
+        background: #171717;
         transition: 0.3s;
         z-index: 1000;
     }
@@ -296,28 +298,30 @@ button:hover {
         left: 0;
     }
 
-    /* TOP BUTTON (logo + new chat) */
+    /* TOP BUTTON */
     .sidebar button {
-        flex: 0 0 auto;
-        width: calc(100% - 20px);
-        margin: 10px;
+        flex-shrink: 0;
     }
 
-    /* HISTORY FULL AREA */
+    /* HISTORY BOX (MAIN FIX) */
     .history {
-        flex: 1;              
-        overflow-y: auto;
+        flex: 1 1 auto;    
+        min-height: 0;      
+        overflow-y: auto;   
         overflow-x: hidden;
+
         display: flex;
-        min-height: 0;
+        flex-direction: column;
+
         padding: 10px;
         box-sizing: border-box;
-        flex-direction: column;
-        padding: 10px;
-        
+
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .history li {
+        flex-shrink: 0;
         width: 100%;
         padding: 10px;
         font-size: 14px;
@@ -325,29 +329,6 @@ button:hover {
 
     /* FOOTER */
     .sign {
-        flex: 0 0 auto;
-        padding: 10px;
-        text-align: center;
-    }
-    
-}
-
-@media (max-width: 768px) {
-
-    .inputBox {
-        max-width: 95%;
-        padding: 0 10px;
-    }
-
-    input {
-        padding-right: 45px; 
-        font-size: 14px;
-    }
-
-    #submit {
-        right: 15px;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
+        flex-shrink: 0;
     }
 }
