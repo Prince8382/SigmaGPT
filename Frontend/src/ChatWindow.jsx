@@ -102,24 +102,30 @@ function ChatWindow() {
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    useEffect(() => {
-        const fetchProfile = async () => {
+   useEffect(() => {
+    const fetchProfile = async () => {
+        try {
             const res = await fetch(
                 `${import.meta.env.VITE_API_URL}/api/user/profile`,
                 {
                     headers: {
-                        Authorization:
-                            "Bearer " + localStorage.getItem("token")
+                        Authorization: "Bearer " + localStorage.getItem("token")
                     }
                 }
             );
 
+            if (!res.ok) throw new Error("Profile fetch failed");
+
             const data = await res.json();
             setProfile(data);
-        };
+        } catch (err) {
+            console.log("Profile error:", err);
+            setProfile({ name: "User", email: "" }); // fallback
+        }
+    };
 
-        fetchProfile();
-    }, []);
+    fetchProfile();
+}, []);
 
     return (
         <div className="chatWindow">
