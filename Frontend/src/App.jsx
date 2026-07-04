@@ -18,6 +18,7 @@ function App() {
   const [prevChats, setPrevChats] = useState([]);
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const providerValues = {
     prompt, setPrompt,
@@ -25,7 +26,8 @@ function App() {
     currThreadId, setCurrThreadId,
     newChat, setNewChat,
     prevChats, setPrevChats,
-    allThreads, setAllThreads
+    allThreads, setAllThreads,
+    sidebarOpen, setSidebarOpen
   };
 
   return (

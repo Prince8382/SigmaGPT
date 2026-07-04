@@ -1,8 +1,10 @@
 import "./ChatWindow.css";
+import './App.css'
 import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect, useRef } from "react";
 import { RingLoader } from "react-spinners";
+
 
 function ChatWindow() {
     const {
@@ -13,7 +15,8 @@ function ChatWindow() {
         currThreadId,
         prevChats,
         setPrevChats,
-        setNewChat
+        setNewChat,
+        setSidebarOpen
     } = useContext(MyContext);
 
     const [loading, setLoding] = useState(false);
@@ -121,6 +124,12 @@ function ChatWindow() {
     return (
         <div className="chatWindow">
             <div className="navbar">
+                <div
+                 className="menuBtn"
+                   onClick={() => setSidebarOpen(true)}
+                 >
+                    <i className="fa-solid fa-bars"></i>
+              </div>
                 <span>
                     SigmaGPT <i className="fa-solid fa-angle-down"></i>
                 </span>

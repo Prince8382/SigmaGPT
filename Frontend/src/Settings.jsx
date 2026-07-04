@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css'
 
 function Settings() {
   const [name, setName] = useState("");

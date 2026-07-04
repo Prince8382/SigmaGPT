@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import "./Chat.css"
 import { useContext, useState, useEffect, useRef } from 'react';
 import { MyContext } from './MyContext';

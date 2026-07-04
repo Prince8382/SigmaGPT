@@ -3,9 +3,10 @@ import "./Sidebar.css";
 import { useState, useEffect } from 'react';
 import { MyContext } from  "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
+import './App.css'
 
 function Sidebar() {
-    const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
+    const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats, SidebarOpen, setSidebarOpen} = useContext(MyContext);
 
     const getAllThreads = async () => {
     try {
@@ -44,6 +45,7 @@ function Sidebar() {
         setReply(null);
         setCurrThreadId(uuidv1());
         setPrevChats([]);
+        setSidebarOpen(false);
     }
 
     const changeThread = async (newThreadId) => {
@@ -51,6 +53,7 @@ function Sidebar() {
     setPrevChats([]);
     setReply(null);
     setNewChat(false);
+    setSidebarOpen(false);
 
     try {
         const token = localStorage.getItem("token");
@@ -114,7 +117,15 @@ function Sidebar() {
     }
 
     return ( 
-        <section className='sidebar'>
+<>
+    {sidebarOpen && (
+        <div
+            className="overlay"
+            onClick={() => setSidebarOpen(false)}
+        ></div>
+    )}
+
+    <section className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         
             <button onClick={createNewChat}>
                 <img src='src/assets/blacklogo.png' alt='gpt logo' className='logo'></img>
@@ -144,7 +155,8 @@ function Sidebar() {
                 <p>By Prince Chaudhary🖤</p>
             </div>
         </section>
-     );
+        </>
+     );    
 }
 
 export default Sidebar ;

@@ -238,3 +238,17 @@ input:focus {
   flex-direction: column;
   overflow: hidden;
 } */
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 15px;
+}
+
+/* Mobile layout alignment */
+@media (max-width: 768px){
+    .navbar{
+        justify-content:space-between;
+    }
+}
