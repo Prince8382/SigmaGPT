@@ -276,7 +276,7 @@ button:hover {
 
 @media (max-width: 768px) {
 
- 
+  
   .sidebar {
     position: fixed;
     top: 0;
@@ -299,16 +299,26 @@ button:hover {
     left: 0;
   }
 
+ 
+  .sidebar button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
   
   .history {
     flex: 1;
-    width: 100%;
+
+    width: 80%;          
+    margin: 10px auto;   
 
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    padding: 10px;
+    padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -330,10 +340,10 @@ button:hover {
     overflow: hidden;
     text-overflow: ellipsis;
 
-    background: rgba(255,255,255,0.03); 
+    background: rgba(255,255,255,0.03);
   }
 
-
+  
   .history li i {
     position: absolute;
     right: 10px;
@@ -342,17 +352,11 @@ button:hover {
 
     font-size: 14px;
     color: #fff;
+    flex-shrink: 0;
   }
 
   .history li i:hover {
     color: #f87171;
-  }
-
-
-  .sidebar button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
   }
 
   
