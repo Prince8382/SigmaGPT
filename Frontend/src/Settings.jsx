@@ -5,7 +5,7 @@ function Settings() {
   const [profileImage, setProfileImage] = useState("");
 
   const updateProfile = async () => {
-    const res = await fetch("http://localhost:8080/api/user/profile", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -19,11 +19,11 @@ function Settings() {
   };
 
   const changePassword = async (oldPassword, newPassword) => {
-    const res = await fetch("http://localhost:8080/api/user/password", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token")
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify({ oldPassword, newPassword })
     });

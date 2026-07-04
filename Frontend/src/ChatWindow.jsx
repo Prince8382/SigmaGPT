@@ -102,7 +102,7 @@ function ChatWindow() {
     useEffect(() => {
         const fetchProfile = async () => {
             const res = await fetch(
-                "http://localhost:8080/api/user/profile",
+                `${import.meta.env.VITE_API_URL}/api/user/profile`,
                 {
                     headers: {
                         Authorization:

@@ -230,3 +230,11 @@ input:focus {
         font-size: 12px;
     }
 }
+
+.chatWindow {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

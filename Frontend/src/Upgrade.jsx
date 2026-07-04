@@ -1,12 +1,12 @@
 function Upgrade() {
 
   const upgradePlan = async () => {
-    const res = await fetch("http://localhost:8080/api/user/upgrade", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/upgrade`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token")
-      }
+         "Content-Type": "application/json",
+         Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
     });
 
     const data = await res.json();

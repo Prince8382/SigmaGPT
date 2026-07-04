@@ -47,37 +47,57 @@ function Sidebar() {
     }
 
     const changeThread = async (newThreadId) => {
-        setCurrThreadId(newThreadId);
-        setPrevChats([]); 
-        setReply(null);
-        setNewChat(false);
+    setCurrThreadId(newThreadId);
+    setPrevChats([]);
+    setReply(null);
+    setNewChat(false);
 
-        try {
-            const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`);
-            const res = await response.json();
-            console.log(res);
-            setPrevChats(res);
-            setNewChat(false);
-            setReply(null);
-            setPrevChats(res || []);
-        } catch(err) {
-            console.log(err);
+    try {
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/thread/${newThreadId}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+            }
+        );
+
+        const res = await response.json();
+        console.log(res);
+
+        // IMPORTANT safety check
+        if (!Array.isArray(res)) {
+            console.log("Invalid response:", res);
+            setPrevChats([]);
+            return;
         }
+
+        setPrevChats(res || []);
+        setNewChat(false);
+        setReply(null);
+
+    } catch (err) {
+        console.log(err);
     }
+};
 
     const deleteThread = async (threadId) => {
         try {
             const token = localStorage.getItem("token");
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api/thread/${threadId}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                                Authorization: `Bearer ${token}`,
+                                
+                             },
+                 }
+            );
 
-const response = await fetch(
-  `http://localhost:8080/api/thread/${threadId}`,
-  {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
-);
             const res = await response.json();
           //  console.log(res);
 
