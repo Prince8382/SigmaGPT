@@ -275,10 +275,11 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+
   .sidebar {
     position: fixed;
     top: 0;
-    left: -100%;         
+    left: -100%;
     width: 80%;
     height: 100vh;
 
@@ -290,13 +291,26 @@ button:hover {
   }
 
   .sidebar.open {
-    left: 0;             
+    left: 0;
   }
 
+  
+  .history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
 
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  
   .history li {
     width: 100%;
-    height: 45px;              
+    height: 45px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -305,23 +319,17 @@ button:hover {
     border-radius: 10px;
 
     white-space: nowrap;
-    overflow: hidden;        
+    overflow: hidden;
   }
 
-  .history li span,
+ 
   .history li {
-    text-overflow: ellipsis;  
+    text-overflow: ellipsis;
   }
-  .history li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.history li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
+
+  
+  .history li i {
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
 }
