@@ -276,7 +276,7 @@ button:hover {
 
 @media (max-width: 768px) {
 
-  
+  /* SIDEBAR */
   .sidebar {
     position: fixed;
     top: 0;
@@ -289,82 +289,90 @@ button:hover {
     display: flex;
     flex-direction: column;
 
-    transition: .3s;
+    transition: 0.3s;
     z-index: 1000;
     overflow: hidden;
   }
 
-  .sidebar.open{
-    left:0;
+  .sidebar.open {
+    left: 0;
   }
 
-  
-  .sidebar button{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-shrink:0;
+  /* NEW CHAT BUTTON */
+  .sidebar button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   /* HISTORY */
-  .history{
-    flex:1;
-    width:100%;              
-    padding:10px 8px;        
-    overflow-y:auto;
-    overflow-x:hidden;
+  .history {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-sizing: border-box;
   }
 
- 
-  .history li{
-    width:calc(100% - 8px);   
-    margin:0 auto;
+  /* EACH HISTORY ITEM */
+  .history li {
+    width: 100%;
+    min-height: 48px;
 
-    height:46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    display:flex;
-    align-items:center;
+    padding: 12px 15px;
 
-    padding:0 42px 0 12px;
+    background: #242424;
+    border-radius: 10px;
 
-    background:#242424;
-    border-radius:10px;
+    box-sizing: border-box;
 
-    position:relative;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
- 
-  .history li .fa-trash{
-    position:absolute;
-    right:12px;
-    top:50%;
-    transform:translateY(-50%);
-
-    opacity:1;
-    font-size:14px;
-    color:#bdbdbd;
-
-    transition:.2s;
+  /* TEXT */
+  .history li p,
+  .history li span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
   }
 
-  .history li:hover .fa-trash{
-    color:#fff;
+  /* DELETE ICON */
+  .history li .fa-trash {
+    flex-shrink: 0;
+    margin-left: 12px;
+
+    color: #bdbdbd;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
   }
 
-  .history li .fa-trash:hover{
-    color:#f87171;
+  .history li:hover .fa-trash {
+    color: #fff;
   }
 
-  .history::-webkit-scrollbar{
-    display:none;
+  .history li .fa-trash:hover {
+    color: #f87171;
+  }
+
+  .history::-webkit-scrollbar {
+    display: none;
   }
 }
