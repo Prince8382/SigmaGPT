@@ -275,38 +275,53 @@ button:hover {
 }
 
 /* mobile hidden by default */
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .sidebar{
+    .sidebar {
         position: fixed;
         left: -280px;
         top: 0;
         width: 280px;
         height: 100vh;
-        background:#171717;
+        background: #171717;
+        display: flex;
         flex-direction: column;
-        transition:.3s;
-        z-index:1000;
+        justify-content: flex-start;
+        transition: 0.3s;
+        z-index: 1000;
     }
 
-    .sidebar.open{
-        left:0;
+    .sidebar.open {
+        left: 0;
     }
 
-    .history{
-        display:block;
-        overflow-y:auto;
-        overflow-x:hidden;
-        padding:10px;
+    /* TOP BUTTON (logo + new chat) */
+    .sidebar button {
+        flex: 0 0 auto;
+        width: calc(100% - 20px);
+        margin: 10px;
     }
 
-    .history li{
-        display:block;
-        width:100%;
-        margin-bottom:8px;
+    /* HISTORY FULL AREA */
+    .history {
+        flex: 1;              /* ⭐ important */
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .sign{
-        display:block;
+    .history li {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    .sign {
+        flex: 0 0 auto;
+        padding: 10px;
+        text-align: center;
     }
 }
